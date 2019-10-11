@@ -186,6 +186,8 @@ m4 <- glmmTMB::glmmTMB(value ~ phase_f*test + apoe + phase_f*group +
 #                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*pcr*test + (phase_f + test|idcode),
 #                                    long,
 #                        REML = FALSE))  ## 22m
+```
+```{r}
 system.time(m1 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*test +
                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*pcr +
@@ -194,10 +196,6 @@ system.time(m1 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                        REML = FALSE))  # 13min
 ```
 
-
-```{r echo = FALSE}
-m1 <- readRDS(file = "m1_gender2.rds")
-```
 
 ```{r echo = FALSE, include = FALSE}
 test_names <- c(
@@ -338,7 +336,7 @@ system.time(m2 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
 ```
 
 
-```{r eval = FALSE}
+```{r eval = TRUE}
 # 3-way interactions informative and more achievable with given data
 system.time(m2 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                          age_z*gender*test +
@@ -350,10 +348,6 @@ system.time(m2 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
 
 The effect of PCR in the age x PCR x gender x test is shown plotted below. PCR is plotted in the rows at the 10th, 50th, and 90th percentiles.  
 
-
-```{r echo = FALSE, include = FALSE}
-m2 <- readRDS(file = "m2_gender2.rds")
-```
 
 ```{r}
 p2$fit <- predict(m2, p2, re.form = NA)  
