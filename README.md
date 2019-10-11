@@ -11,9 +11,6 @@ Research Data Portal <id goes here> `thbp_t6_sex.rds` under CC-BY 4.0
 ![](supplementary_materials_thbp_sex_files/figure-gfm/unnamed-chunk-17-1.gif)<!-- -->
 
 
-![](supplementary_materials_thbp_sex_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
-
-
 ## Table S1 (coefficients)
 
 Standardized coefficients with 95% CIs for linear and non-linear models
