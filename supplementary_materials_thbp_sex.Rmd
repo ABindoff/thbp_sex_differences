@@ -38,7 +38,7 @@ OPTIONAL = FALSE
 ```
 
 ```{r}
-long <- readRDS('thbp_t6_sex.rds')
+long <- readRDS('thbp_t6_sex.rds') %>% filter(!is.na(pcr))
 d0_baseline <- filter(long, phase_f == '1', !duplicated(idcode))
 d0 <- arrange(long, idcode, phase) %>%
   group_by(idcode, phase_f) %>%
@@ -76,7 +76,7 @@ ggplot(long, aes(x = phase_f, y = value, colour = gender)) +
 # r = (1+R)^(1/years of study)
 # rate of attrition = 1-r
 
-1-(1+(400-562)/562)^(1/5)
+1-(1+(396-556)/556)^(1/5)
 ```
 
 ## Age-related cohort effects
