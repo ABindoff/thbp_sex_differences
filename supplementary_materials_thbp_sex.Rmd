@@ -197,6 +197,20 @@ system.time(m1 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
 ```
 
 
+```{r}
+# test APOE x age x gender
+
+system.time(m.apoe <- lme4::lmer(value ~ phase_f*test + phase_f*group +
+                         age_z*pcr +
+                         age_z*test +
+                         age_z*apoe*gender +
+                         (1|idcode),
+                       data = long,
+                       REML = FALSE))  #  
+anova(m.apoe)
+```
+
+
 ```{r echo = FALSE, include = FALSE}
 test_names <- c(
   `ravlt_t15_tot_z` = "RAVLT tot",
@@ -539,6 +553,15 @@ These confidence intervals were estimated in preparation for Fig 4 in ms.
 
 ```{r}
 sjPlot::tab_df(p3)
+
+```
+
+## Table S3
+
+Estimated coefficients for a model of age x gender x APOE interactions.  
+
+```{r}
+sjPlot::tab_model(m.apoe)
 
 ```
 
