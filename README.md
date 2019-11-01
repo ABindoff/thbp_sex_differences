@@ -6484,3 +6484,1530 @@ Difference
 </tr>
 
 </table>
+
+
+## Table S3
+
+Estimated coefficients for a model of age x gender x APOE interactions.
+
+``` r
+sjPlot::tab_model(m.apoe)
+```
+
+<table style="border-collapse:collapse; border:none;">
+
+<tr>
+
+<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
+
+ 
+
+</th>
+
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+
+value
+
+</th>
+
+</tr>
+
+<tr>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
+
+Predictors
+
+</td>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+
+Estimates
+
+</td>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+
+CI
+
+</td>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+
+p
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+(Intercept)
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.05 – 0.24
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.193
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 2
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.31
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.44 – -0.19
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 3
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.14
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.27 – -0.01
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.033</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 4
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.25
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.12 – 0.38
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 6
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.22
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.37 – -0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.003</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+ravlt arcl raw z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.02
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.12 – 0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.724
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+rcft rcl raw z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.80
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.90 – -0.71
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+lmi unit tot z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.39
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.48 – -0.29
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+lmii unit tot z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.46
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.56 – -0.36
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+reversed log pal te 6<br>score z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.33
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.43 – -0.24
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+Experimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.04
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.10 – 0.18
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.557
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.34
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.41 – -0.26
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+Prior Cognitive<br>Reserve(z)
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.09
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.04 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+e 4+
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.06 – 0.21
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.272
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+Male
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.27
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.41 – -0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.07
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.07 – 0.22
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.337
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.00
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.14 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.968
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.05
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.20 – 0.09
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.483
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.01
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.16 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.925
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.98 – 1.27
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.30
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.16 – 1.45
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.07
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.93 – 1.22
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.88
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.73 – 1.04
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.52
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.37 – 0.66
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.57
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.42 – 0.71
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.28
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.13 – 0.43
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.77
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.61 – 0.93
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.60
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.46 – 0.75
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.68
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.53 – 0.82
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.41
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.26 – 0.56
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.86
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.71 – 1.02
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.60
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.45 – 0.74
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.47
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.32 – 0.61
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.17
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.02 – 0.31
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.027</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.55
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.40 – 0.71
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.04
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.14 – 0.06
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.421
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.01
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.11 – 0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.918
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.08 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.617
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.09
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.02 – 0.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.109
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:pcr
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.01 – 0.07
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.104
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testravlt\_arcl\_raw\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.002</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testrcft\_rcl\_raw\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.05 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testlmi\_unit\_tot\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.05 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testlmii\_unit\_tot\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.11
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.06 – 0.16
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testreversed\_log\_pal\_te6\_score\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.003</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:apoee4+
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.00 – 0.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.061
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:genderMale
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.05
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.15 – 0.05
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.321
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+apoee4+:genderMale
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.33 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.402
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:apoee4+:genderMale
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.03
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.21 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.735
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="4" style="font-weight:bold; text-align:left; padding-top:.8em;">
+
+Random Effects
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+σ<sup>2</sup>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.56
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+τ<sub>00</sub> <sub>idcode</sub>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.29
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+ICC
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.34
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+N <sub>idcode</sub>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+457
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
+
+Observations
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+
+11276
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.161 / 0.447
+
+</td>
+
+</tr>
+
+</table>
