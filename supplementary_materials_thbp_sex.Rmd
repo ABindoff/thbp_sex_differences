@@ -1,7 +1,9 @@
 ---
 title: "THBP T6 Gender analysis"
 author: "Bindoff, A."
-output: github_document
+output: 
+  html_document:
+    code_folding: 'hide'
 
 ---
 
@@ -186,7 +188,8 @@ m4 <- glmmTMB::glmmTMB(value ~ phase_f*test + apoe + phase_f*group +
 #                                    long,
 #                        REML = FALSE))  ## 22m
 ```
-```{r}
+
+```{r eval = FALSE}
 system.time(m1 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*test +
                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*pcr +
@@ -222,7 +225,10 @@ test_names <- c(
   `-0.4` = "30th",
   `0.1` = "50th",
   `0.6` = "70th",
-  `1.2` = "90th"
+  `1.2` = "90th",
+  `10th percentile` = "10th",
+  `50th percentile` = "50th",
+  `90th percentile` = "90th"
 )
 
 
@@ -231,6 +237,7 @@ test_names <- c(
 Set up some plotting functions and estimate from model   
 
 ```{r}
+m1 <- readRDS('m1_nl.rds')
 p2 <- expand.grid(test = factor(levels(long$test)),
                     phase_f = factor(2),
                     group = factor("Control"),
@@ -262,9 +269,19 @@ alpha_pcr <- function(d, pcr0, sd = 1){
   d
 }
 
-l2 <- bind_rows(lapply(unique(p2$pcr), function(z) alpha_pcr(l1, z, sd = 0.3)))
+l2 <- bind_rows(lapply(unique(p2$pcr), function(z) alpha_pcr(l1, z, sd = 0.3))) %>%
+  mutate(PCR = factor(PCR, levels = c(-1.4, -0.4, 0.1, 0.6, 1.2), labels = c("10th percentile",
+                                                                           "30th percentile",
+                                                                           "50th percentile",
+                                                                           "70th percentile",
+                                                                           "90th percentile")))
+  
 
-p2$PCR <- factor(p2$pcr)
+p2$PCR <- factor(p2$pcr, levels = c(-1.4, -0.4, 0.1, 0.6, 1.2), labels = c("10th percentile",
+                                                                           "30th percentile",
+                                                                           "50th percentile",
+                                                                           "70th percentile",
+                                                                           "90th percentile"))
 ```
 
 
@@ -287,7 +304,7 @@ plot_pcr <- function(x){
    xlab("")
 }
 
-pl <- lapply(unique(p2$pcr), plot_pcr)
+pl <- lapply(unique(p2$PCR), plot_pcr)
 library(cowplot)
 pabc <- plot_grid(pl[[1]]+theme(legend.position = 'none', 
                                 axis.text.x = element_blank(), plot.margin = margin(c(2, 2, 0, 2), unit = "mm")),
@@ -315,9 +332,9 @@ pabc <- gridExtra::grid.arrange(pabc, right = "CR percentile")
 ```{r}
 library(gganimate)
 pl <- ggplot(p2, aes(x = age_xi, y = fit, colour = gender, group = gender)) +
-    geom_point(data = l1, alpha = 0.15, size = 0.9, aes(y = value, x = age_xi)) +
+    geom_point(data = l1, alpha = 0.20, size = 0.9, aes(y = value, x = age_xi)) +
     geom_line(size = 1) +
-    scale_colour_manual(values = c("orange3", "slateblue4")) +
+    scale_colour_manual(values = c("orange3", "slateblue4"), name = "Sex") +
     facet_wrap(~test, ncol = 3, scales = "free", labeller = as_labeller(test_names)) +
     theme_bw() +
   ylab("Score (z)") +
@@ -325,9 +342,13 @@ pl <- ggplot(p2, aes(x = age_xi, y = fit, colour = gender, group = gender)) +
   transition_states(PCR) +
    ease_aes('linear') +
    view_follow() +
-  labs(title = 'Prior Cognitive Reserve = {closest_state}')
+  labs(title = 'Estimated trajectory for {closest_state} cognitive reserve')
+
+#animate(pl, renderer = ffmpeg_renderer(), width = 800, height = 450)
+#anim_save('nonlinear_cr_animation.mp4')
 
 pl
+
 ```
 
 
@@ -372,7 +393,7 @@ Highlight data-points from participants with PCR in the region on display (from 
 
 
 ```{r echo = FALSE}
-pl <- lapply(unique(p2$pcr), plot_pcr)
+pl <- lapply(unique(p2$PCR), plot_pcr)
 pabc <- plot_grid(pl[[1]]+theme(legend.position = 'none', 
                                 axis.text.x = element_blank(), plot.margin = margin(c(2, 2, 0, 2), unit = "mm")),
                         pl[[3]]+theme(legend.position = 'none',
