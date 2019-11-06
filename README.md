@@ -8,7 +8,7 @@ Research Data Portal <id goes here> under CC-BY 4.0
 (International) license.
 
 
-![](supplementary_materials_thbp_sex_files/nonlinear_cr_animation.gif)<!-- -->
+![](/nonlinear_cr_animation.gif)<!-- -->
 
 
 ## Table S1 (coefficients)
