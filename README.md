@@ -3,8 +3,8 @@
 Sex differences in cognitive ageing moderated by cognitive reserve.  
 
 Reproducible R code and Supplementary Materials for Alty & Bindoff et
-al. (*in review*). Data available through the University of Tasmania
-Research Data Portal <id goes here> `thbp_t6_sex.rds` under CC-BY 4.0
+al. (*in review*). Materials available through the University of Tasmania
+Research Data Portal <id goes here> under CC-BY 4.0
 (International) license.
 
 

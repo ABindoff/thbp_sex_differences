@@ -2,7 +2,7 @@ THBP T6 Gender analysis
 ================
 Bindoff, A.
 
-2019-10-11 11:21:03
+2019-10-31 18:04:01
 
 # 
 
@@ -23,7 +23,7 @@ used to clean data available on request
 (`minimal_reproducible_dataset.R`).
 
 ``` r
-long <- readRDS('thbp_t6_sex.rds')
+long <- readRDS('thbp_t6_sex.rds') %>% filter(!is.na(pcr))
 d0_baseline <- filter(long, phase_f == '1', !duplicated(idcode))
 d0 <- arrange(long, idcode, phase) %>%
   group_by(idcode, phase_f) %>%
@@ -63,19 +63,19 @@ ggplot(long, aes(x = phase_f, y = value, colour = gender)) +
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">Female<br><span class="stratn">(n=383)</span></span>
+<span class="stratlabel">Female<br><span class="stratn">(n=378)</span></span>
 
 </th>
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">Male<br><span class="stratn">(n=179)</span></span>
+<span class="stratlabel">Male<br><span class="stratn">(n=178)</span></span>
 
 </th>
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">Total<br><span class="stratn">(n=562)</span></span>
+<span class="stratlabel">Total<br><span class="stratn">(n=556)</span></span>
 
 </th>
 
@@ -117,19 +117,19 @@ Mean (SD)
 
 <td>
 
-59.8 (6.56)
+59.9 (6.57)
 
 </td>
 
 <td>
 
-61.0 (6.93)
+61.0 (6.95)
 
 </td>
 
 <td>
 
-60.2 (6.69)
+60.2 (6.71)
 
 </td>
 
@@ -201,7 +201,7 @@ Mean (SD)
 
 <td>
 
-11.4 (0.957)
+11.4 (0.955)
 
 </td>
 
@@ -279,13 +279,13 @@ Mean (SD)
 
 <td>
 
-112 (5.53)
+112 (5.51)
 
 </td>
 
 <td>
 
-112 (5.43)
+112 (5.42)
 
 </td>
 
@@ -351,19 +351,19 @@ e4-
 
 <td>
 
-215 (56.1%)
+210 (55.6%)
 
 </td>
 
 <td>
 
-96 (53.6%)
+95 (53.4%)
 
 </td>
 
 <td>
 
-311 (55.3%)
+305 (54.9%)
 
 </td>
 
@@ -379,19 +379,19 @@ e4+
 
 <td>
 
-94 (24.5%)
+94 (24.9%)
 
 </td>
 
 <td>
 
-57 (31.8%)
+57 (32.0%)
 
 </td>
 
 <td>
 
-151 (26.9%)
+151 (27.2%)
 
 </td>
 
@@ -407,19 +407,19 @@ Missing
 
 <td class="lastrow">
 
-74 (19.3%)
+74 (19.6%)
 
 </td>
 
 <td class="lastrow">
 
-26 (14.5%)
+26 (14.6%)
 
 </td>
 
 <td class="lastrow">
 
-100 (17.8%)
+100 (18.0%)
 
 </td>
 
@@ -477,55 +477,27 @@ Mean (SD)
 
 <tr>
 
-<td class="rowlabel">
+<td class="rowlabel lastrow">
 
 Median \[Min, Max\]
 
 </td>
 
-<td>
+<td class="lastrow">
 
 0.00925 \[-2.87, 2.41\]
 
 </td>
 
-<td>
+<td class="lastrow">
 
 0.211 \[-2.08, 2.89\]
 
 </td>
 
-<td>
+<td class="lastrow">
 
 0.0551 \[-2.87, 2.89\]
-
-</td>
-
-</tr>
-
-<tr>
-
-<td class="rowlabel lastrow">
-
-Missing
-
-</td>
-
-<td class="lastrow">
-
-5 (1.3%)
-
-</td>
-
-<td class="lastrow">
-
-1 (0.6%)
-
-</td>
-
-<td class="lastrow">
-
-6 (1.1%)
 
 </td>
 
@@ -563,19 +535,19 @@ Control
 
 <td>
 
-78 (20.4%)
+78 (20.6%)
 
 </td>
 
 <td>
 
-46 (25.7%)
+45 (25.3%)
 
 </td>
 
 <td>
 
-124 (22.1%)
+123 (22.1%)
 
 </td>
 
@@ -591,19 +563,19 @@ Experimental
 
 <td class="lastrow">
 
-305 (79.6%)
+300 (79.4%)
 
 </td>
 
 <td class="lastrow">
 
-133 (74.3%)
+133 (74.7%)
 
 </td>
 
 <td class="lastrow">
 
-438 (77.9%)
+433 (77.9%)
 
 </td>
 
@@ -633,31 +605,31 @@ Experimental
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">1<br><span class="stratn">(n=562)</span></span>
+<span class="stratlabel">1<br><span class="stratn">(n=556)</span></span>
 
 </th>
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">2<br><span class="stratn">(n=513)</span></span>
+<span class="stratlabel">2<br><span class="stratn">(n=507)</span></span>
 
 </th>
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">3<br><span class="stratn">(n=481)</span></span>
+<span class="stratlabel">3<br><span class="stratn">(n=476)</span></span>
 
 </th>
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">4<br><span class="stratn">(n=458)</span></span>
+<span class="stratlabel">4<br><span class="stratn">(n=454)</span></span>
 
 </th>
 
 <th class="firstrow lastrow">
 
-<span class="stratlabel">6<br><span class="stratn">(n=400)</span></span>
+<span class="stratlabel">6<br><span class="stratn">(n=396)</span></span>
 
 </th>
 
@@ -707,31 +679,31 @@ Female
 
 <td>
 
-383 (68.1%)
+378 (68.0%)
 
 </td>
 
 <td>
 
-348 (67.8%)
+343 (67.7%)
 
 </td>
 
 <td>
 
-323 (67.2%)
+318 (66.8%)
 
 </td>
 
 <td>
 
-308 (67.2%)
+304 (67.0%)
 
 </td>
 
 <td>
 
-269 (67.2%)
+265 (66.9%)
 
 </td>
 
@@ -747,31 +719,31 @@ Male
 
 <td class="lastrow">
 
-179 (31.9%)
+178 (32.0%)
 
 </td>
 
 <td class="lastrow">
 
-165 (32.2%)
+164 (32.3%)
 
 </td>
 
 <td class="lastrow">
 
-158 (32.8%)
+158 (33.2%)
 
 </td>
 
 <td class="lastrow">
 
-150 (32.8%)
+150 (33.0%)
 
 </td>
 
 <td class="lastrow">
 
-131 (32.8%)
+131 (33.1%)
 
 </td>
 
@@ -817,25 +789,25 @@ Mean (SD)
 
 <td>
 
-60.2 (6.69)
+60.2 (6.71)
 
 </td>
 
 <td>
 
-61.1 (6.69)
+61.1 (6.70)
 
 </td>
 
 <td>
 
-62.1 (6.68)
+62.2 (6.69)
 
 </td>
 
 <td>
 
-63.3 (6.63)
+63.3 (6.64)
 
 </td>
 
@@ -927,31 +899,31 @@ e4-
 
 <td>
 
-311 (55.3%)
+305 (54.9%)
 
 </td>
 
 <td>
 
-295 (57.5%)
+289 (57.0%)
 
 </td>
 
 <td>
 
-283 (58.8%)
+278 (58.4%)
 
 </td>
 
 <td>
 
-269 (58.7%)
+265 (58.4%)
 
 </td>
 
 <td>
 
-234 (58.5%)
+230 (58.1%)
 
 </td>
 
@@ -967,31 +939,31 @@ e4+
 
 <td>
 
-151 (26.9%)
+151 (27.2%)
 
 </td>
 
 <td>
 
-142 (27.7%)
+142 (28.0%)
 
 </td>
 
 <td>
 
-133 (27.7%)
+133 (27.9%)
 
 </td>
 
 <td>
 
-129 (28.2%)
+129 (28.4%)
 
 </td>
 
 <td>
 
-117 (29.2%)
+117 (29.5%)
 
 </td>
 
@@ -1007,31 +979,31 @@ Missing
 
 <td class="lastrow">
 
-100 (17.8%)
+100 (18.0%)
 
 </td>
 
 <td class="lastrow">
 
-76 (14.8%)
+76 (15.0%)
 
 </td>
 
 <td class="lastrow">
 
-65 (13.5%)
+65 (13.7%)
 
 </td>
 
 <td class="lastrow">
 
-60 (13.1%)
+60 (13.2%)
 
 </td>
 
 <td class="lastrow">
 
-49 (12.2%)
+49 (12.4%)
 
 </td>
 
@@ -1077,31 +1049,31 @@ Control
 
 <td>
 
-124 (22.1%)
+123 (22.1%)
 
 </td>
 
 <td>
 
-109 (21.2%)
+108 (21.3%)
 
 </td>
 
 <td>
 
-101 (21.0%)
+101 (21.2%)
 
 </td>
 
 <td>
 
-97 (21.2%)
+97 (21.4%)
 
 </td>
 
 <td>
 
-80 (20.0%)
+80 (20.2%)
 
 </td>
 
@@ -1117,31 +1089,31 @@ Experimental
 
 <td class="lastrow">
 
-438 (77.9%)
+433 (77.9%)
 
 </td>
 
 <td class="lastrow">
 
-404 (78.8%)
+399 (78.7%)
 
 </td>
 
 <td class="lastrow">
 
-380 (79.0%)
+375 (78.8%)
 
 </td>
 
 <td class="lastrow">
 
-361 (78.8%)
+357 (78.6%)
 
 </td>
 
 <td class="lastrow">
 
-320 (80.0%)
+316 (79.8%)
 
 </td>
 
@@ -1160,10 +1132,10 @@ Experimental
 # r = (1+R)^(1/years of study)
 # rate of attrition = 1-r
 
-1-(1+(400-562)/562)^(1/5)
+1-(1+(396-556)/556)^(1/5)
 ```
 
-    ## [1] 0.0657465
+    ## [1] 0.06561883
 
 ## Age-related cohort effects
 
@@ -1201,7 +1173,6 @@ summary(m0 <- lm(pcr ~ gender + age_1, data = d0_baseline))
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## Residual standard error: 0.9798 on 553 degrees of freedom
-    ##   (6 observations deleted due to missingness)
     ## Multiple R-squared:  0.03104,    Adjusted R-squared:  0.02754 
     ## F-statistic: 8.859 on 2 and 553 DF,  p-value: 0.0001633
 
@@ -1231,28 +1202,28 @@ summary(m0 <- lm(wtar_fsiq ~ gender + age_1, data = d0_baseline))
     ## 
     ## Residuals:
     ##     Min      1Q  Median      3Q     Max 
-    ## -30.077  -2.962   1.350   3.875  10.586 
+    ## -30.132  -2.837   1.339   3.828  10.574 
     ## 
     ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) 105.44222    2.05465  51.319  < 2e-16 ***
-    ## genderMale   -0.63646    0.48860  -1.303 0.193240    
-    ## age_1         0.11816    0.03403   3.472 0.000557 ***
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept) 105.4317     2.0598  51.185  < 2e-16 ***
+    ## genderMale   -0.5982     0.4897  -1.222 0.222368    
+    ## age_1         0.1186     0.0341   3.477 0.000547 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 5.379 on 559 degrees of freedom
-    ## Multiple R-squared:  0.02292,    Adjusted R-squared:  0.01942 
-    ## F-statistic: 6.555 on 2 and 559 DF,  p-value: 0.001534
+    ## Residual standard error: 5.371 on 553 degrees of freedom
+    ## Multiple R-squared:  0.02298,    Adjusted R-squared:  0.01945 
+    ## F-statistic: 6.503 on 2 and 553 DF,  p-value: 0.001616
 
 ``` r
 confint(m0)
 ```
 
     ##                    2.5 %      97.5 %
-    ## (Intercept) 101.40645340 109.4779947
-    ## genderMale   -1.59618187   0.3232559
-    ## age_1         0.05131454   0.1850151
+    ## (Intercept) 101.38570802 109.4776857
+    ## genderMale   -1.56006151   0.3636505
+    ## age_1         0.05157981   0.1855230
 
 ## Gender Interactions
 
@@ -1309,6 +1280,9 @@ m4 <- glmmTMB::glmmTMB(value ~ phase_f*test + apoe + phase_f*group +
 #                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*pcr*test + (phase_f + test|idcode),
 #                                    long,
 #                        REML = FALSE))  ## 22m
+```
+
+``` r
 system.time(m1 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*test +
                          splines::ns(age_z, knots = c(-0.031), intercept = TRUE)*gender*pcr +
@@ -1316,6 +1290,46 @@ system.time(m1 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                        data = long,
                        REML = FALSE))  # 13min
 ```
+
+    ##    user  system elapsed 
+    ##  727.36   77.16  804.94
+
+``` r
+# test APOE x age x gender
+
+system.time(m.apoe <- lme4::lmer(value ~ phase_f*test + phase_f*group +
+                         age_z*pcr +
+                         age_z*test +
+                         age_z*apoe*gender +
+                         (1|idcode),
+                       data = long,
+                       REML = FALSE))  #  
+```
+
+    ##    user  system elapsed 
+    ##    0.57    0.01    0.58
+
+``` r
+anova(m.apoe)
+```
+
+    ## Analysis of Variance Table
+    ##                   Df Sum Sq Mean Sq  F value
+    ## phase_f            4 294.85  73.713 132.2082
+    ## test               5   3.04   0.607   1.0896
+    ## group              1   5.97   5.969  10.7059
+    ## age_z              1  48.67  48.668  87.2883
+    ## pcr                1   4.95   4.952   8.8818
+    ## apoe               1   0.08   0.077   0.1390
+    ## gender             1  17.19  17.187  30.8257
+    ## phase_f:test      20 412.96  20.648  37.0328
+    ## phase_f:group      4   3.25   0.812   1.4571
+    ## age_z:pcr          1   1.17   1.170   2.0989
+    ## test:age_z         5  14.09   2.819   5.0553
+    ## age_z:apoe         1   2.20   2.201   3.9482
+    ## age_z:gender       1   1.09   1.086   1.9479
+    ## apoe:gender        1   0.40   0.401   0.7188
+    ## age_z:apoe:gender  1   0.06   0.064   0.1142
 
 Set up some plotting functions and estimate from model
 
@@ -1396,7 +1410,7 @@ pabc <- plot_grid(pl[[1]]+theme(legend.position = 'none',
 pabc <- gridExtra::grid.arrange(pabc, right = "CR percentile")
 ```
 
-![](supplementary_materials_thbp_sex_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](supplementary_materials_thbp_sex_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 #### Figure 3.1 (animation, cannot be reproduced in ms)
 
@@ -1418,7 +1432,7 @@ pl <- ggplot(p2, aes(x = age_xi, y = fit, colour = gender, group = gender)) +
 pl
 ```
 
-![](supplementary_materials_thbp_sex_files/figure-gfm/unnamed-chunk-17-1.gif)<!-- -->
+![](supplementary_materials_thbp_sex_files/figure-gfm/unnamed-chunk-18-1.gif)<!-- -->
 
 ### Linear models
 
@@ -1445,6 +1459,9 @@ system.time(m2 <- lmer(value ~ phase_f*test + apoe + phase_f*group +
                                    long,
                        REML = FALSE))
 ```
+
+    ##    user  system elapsed 
+    ##  598.50   70.55  669.45
 
 The effect of PCR in the age x PCR x gender x test is shown plotted
 below. PCR is plotted in the rows at the 10th, 50th, and 90th
@@ -1604,7 +1621,7 @@ print(fig4)
     ## TableGrob (1 x 2) "arrange": 2 grobs
     ##   z     cells    name                  grob
     ## 1 1 (1-1,1-1) arrange        gtable[layout]
-    ## 2 2 (1-1,2-2) arrange text[GRID.text.37471]
+    ## 2 2 (1-1,2-2) arrange text[GRID.text.37522]
 
 ## Table S1 (coefficients)
 
@@ -1701,7 +1718,7 @@ p
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.046 – 0.344
+0.047 – 0.344
 
 </td>
 
@@ -1713,13 +1730,13 @@ p
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.235
+\-4.236
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-5.793 – -2.677
+\-5.792 – -2.679
 
 </td>
 
@@ -1857,7 +1874,7 @@ phase f 4
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.133 – 0.385
+0.134 – 0.385
 
 </td>
 
@@ -1937,7 +1954,7 @@ ravlt arcl raw z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.124
+0.125
 
 </td>
 
@@ -1949,13 +1966,13 @@ ravlt arcl raw z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.207 – 2.449
+0.208 – 2.449
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-<strong>0.021</strong>
+<strong>0.020</strong>
 
 </td>
 
@@ -1989,19 +2006,19 @@ rcft rcl raw z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.747
+\-0.748
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-2.611 – 1.117
+\-2.611 – 1.114
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.432
+0.431
 
 </td>
 
@@ -2023,7 +2040,7 @@ lmi unit tot z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.575 – -0.360
+\-0.576 – -0.360
 
 </td>
 
@@ -2035,19 +2052,19 @@ lmi unit tot z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.196
+0.194
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.477 – 1.869
+\-1.478 – 1.867
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.819
+0.820
 
 </td>
 
@@ -2081,19 +2098,19 @@ lmii unit tot z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.529
+0.527
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.143 – 2.200
+\-1.143 – 2.198
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.535
+0.536
 
 </td>
 
@@ -2133,13 +2150,13 @@ reversed log pal te 6<br>score z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.778 – 1.789
+\-1.776 – 1.786
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.995
+0.996
 
 </td>
 
@@ -2161,13 +2178,13 @@ e 4+
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.051 – 0.156
+\-0.052 – 0.156
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.324
+0.325
 
 </td>
 
@@ -2185,7 +2202,7 @@ e 4+
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.366
+0.364
 
 </td>
 
@@ -2213,13 +2230,13 @@ Experimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.392
+0.393
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.074
+0.075
 
 </td>
 
@@ -2231,7 +2248,7 @@ Experimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.292
+0.291
 
 </td>
 
@@ -2253,7 +2270,7 @@ age z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.340 – -0.175
+\-0.340 – -0.176
 
 </td>
 
@@ -2311,7 +2328,7 @@ Male
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-5.302 – -0.754
+\-5.301 – -0.756
 
 </td>
 
@@ -2339,7 +2356,7 @@ Prior Cognitive<br>Reserve(z)
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.019 – 0.140
+0.020 – 0.141
 
 </td>
 
@@ -2351,19 +2368,19 @@ Prior Cognitive<br>Reserve(z)
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.164
+\-0.166
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.173 – 0.846
+\-1.176 – 0.843
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.751
+0.747
 
 </td>
 
@@ -2385,13 +2402,13 @@ phase\_f2:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.038 – 0.184
+\-0.039 – 0.184
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.199
+0.200
 
 </td>
 
@@ -2403,7 +2420,7 @@ phase\_f2:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.036 – 0.186
+\-0.036 – 0.187
 
 </td>
 
@@ -2437,7 +2454,7 @@ phase\_f3:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.951
+0.953
 
 </td>
 
@@ -2455,7 +2472,7 @@ phase\_f3:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.902
+0.903
 
 </td>
 
@@ -2483,7 +2500,7 @@ phase\_f4:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.403
+0.402
 
 </td>
 
@@ -2517,7 +2534,7 @@ phase\_f6:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.002
+0.001
 
 </td>
 
@@ -2529,7 +2546,7 @@ phase\_f6:testravlt\_arcl\_raw\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.980
+0.982
 
 </td>
 
@@ -3029,7 +3046,7 @@ phase\_f4:testlmii\_unit\_tot\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.272 – 0.507
+0.272 – 0.506
 
 </td>
 
@@ -3213,7 +3230,7 @@ phase\_f4:testreversed\_log\_pal\_te6\_score\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.052 – 0.289
+0.052 – 0.288
 
 </td>
 
@@ -3277,7 +3294,7 @@ phase\_f6:testreversed\_log\_pal\_te6\_score\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.443 – 0.708
+0.443 – 0.707
 
 </td>
 
@@ -3299,7 +3316,7 @@ phase\_f2:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.039
+\-0.038
 
 </td>
 
@@ -3311,7 +3328,7 @@ phase\_f2:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.439
+0.442
 
 </td>
 
@@ -3323,13 +3340,13 @@ phase\_f2:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.138 – 0.057
+\-0.139 – 0.057
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.414
+0.412
 
 </td>
 
@@ -3357,7 +3374,7 @@ phase\_f3:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.849
+0.850
 
 </td>
 
@@ -3369,13 +3386,13 @@ phase\_f3:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.123 – 0.096
+\-0.124 – 0.096
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.809
+0.806
 
 </td>
 
@@ -3403,13 +3420,13 @@ phase\_f4:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.644
+0.643
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.023
+0.022
 
 </td>
 
@@ -3421,7 +3438,7 @@ phase\_f4:groupExperimental
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.691
+0.695
 
 </td>
 
@@ -3489,7 +3506,7 @@ age\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.245 – -0.009
+\-0.244 – -0.009
 
 </td>
 
@@ -3575,7 +3592,7 @@ testrcft\_rcl\_raw\_z:age\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.804
+0.803
 
 </td>
 
@@ -3609,7 +3626,7 @@ testlmi\_unit\_tot\_z:age\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.072 – 0.093
+\-0.072 – 0.094
 
 </td>
 
@@ -3695,7 +3712,7 @@ testreversed\_log\_pal\_te6\_score\_z:age\_z
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.351
+0.350
 
 </td>
 
@@ -3723,13 +3740,13 @@ testravlt\_arcl\_raw\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.132
+0.131
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.046 – 0.218
+0.045 – 0.217
 
 </td>
 
@@ -3747,13 +3764,13 @@ testravlt\_arcl\_raw\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.650 – 1.900
+\-1.649 – 1.899
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.891
+0.890
 
 </td>
 
@@ -3769,13 +3786,13 @@ testrcft\_rcl\_raw\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.762
+0.761
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.599 – 0.924
+0.598 – 0.924
 
 </td>
 
@@ -3787,13 +3804,13 @@ testrcft\_rcl\_raw\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-3.071
+3.073
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.238 – 5.904
+0.243 – 5.904
 
 </td>
 
@@ -3833,13 +3850,13 @@ testlmi\_unit\_tot\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-2.529
+2.531
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.022 – 5.080
+\-0.019 – 5.082
 
 </td>
 
@@ -3867,7 +3884,7 @@ testlmii\_unit\_tot\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.025 – 0.314
+0.025 – 0.315
 
 </td>
 
@@ -3879,19 +3896,19 @@ testlmii\_unit\_tot\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-2.191
+2.192
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.361 – 4.743
+\-0.359 – 4.744
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.093
+0.092
 
 </td>
 
@@ -3925,13 +3942,13 @@ testreversed\_log\_pal\_te6\_score\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-2.466
+2.465
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.247 – 5.180
+\-0.246 – 5.176
 
 </td>
 
@@ -3965,7 +3982,7 @@ age\_z:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.772
+0.770
 
 </td>
 
@@ -3999,25 +4016,25 @@ genderMale:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.142 – 0.076
+\-0.142 – 0.077
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.557
+0.559
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-1.810
+1.814
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.305 – 3.316
+0.308 – 3.320
 
 </td>
 
@@ -4091,7 +4108,7 @@ testrcft\_rcl\_raw\_z:age\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.214
+0.215
 
 </td>
 
@@ -4199,19 +4216,19 @@ testreversed\_log\_pal\_te6\_score\_z:age\_z:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.000
+\-0.000
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.135 – 0.136
+\-0.135 – 0.135
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.999
+1.000
 
 </td>
 
@@ -4245,13 +4262,13 @@ age\_z:genderMale:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.021 – 0.151
+\-0.021 – 0.150
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.138
+0.139
 
 </td>
 
@@ -4297,7 +4314,7 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)1
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.943 – 2.454
+0.943 – 2.453
 
 </td>
 
@@ -4331,13 +4348,13 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)2
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-9.385
+9.386
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-6.174 – 12.596
+6.178 – 12.595
 
 </td>
 
@@ -4377,7 +4394,7 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)1:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.064 – 2.295
+\-0.063 – 2.295
 
 </td>
 
@@ -4411,13 +4428,13 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)2:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-5.147
+5.148
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.437 – 9.857
+0.441 – 9.854
 
 </td>
 
@@ -4452,13 +4469,13 @@ testravlt\_arcl\_raw\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.602
+\-0.603
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.202 – -0.003
+\-1.202 – -0.004
 
 </td>
 
@@ -4493,19 +4510,19 @@ TRUE)1
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.153
+\-0.152
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.092 – 0.787
+\-1.091 – 0.787
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.750
+0.751
 
 </td>
 
@@ -4540,13 +4557,13 @@ TRUE)1
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.231 – 0.462
+\-1.230 – 0.462
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.373
+0.374
 
 </td>
 
@@ -4575,13 +4592,13 @@ testlmii\_unit\_tot\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.515
+\-0.514
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.362 – 0.332
+\-1.361 – 0.333
 
 </td>
 
@@ -4622,7 +4639,7 @@ c(-0.031), intercept = TRUE)1
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.995 – 0.810
+\-0.993 – 0.809
 
 </td>
 
@@ -4657,13 +4674,13 @@ testravlt\_arcl\_raw\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-2.924
+\-2.925
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-5.209 – -0.639
+\-5.209 – -0.642
 
 </td>
 
@@ -4698,19 +4715,19 @@ TRUE)2
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.692
+\-0.689
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.515 – 3.131
+\-4.509 – 3.131
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.723
+0.724
 
 </td>
 
@@ -4739,19 +4756,19 @@ TRUE)2
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.342
+\-1.340
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.772 – 2.088
+\-4.768 – 2.089
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.443
+0.444
 
 </td>
 
@@ -4780,13 +4797,13 @@ testlmii\_unit\_tot\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-2.194
+\-2.191
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-5.620 – 1.232
+\-5.616 – 1.234
 
 </td>
 
@@ -4821,13 +4838,13 @@ c(-0.031), intercept = TRUE)2
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.045
+\-1.044
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.701 – 2.611
+\-4.696 – 2.607
 
 </td>
 
@@ -4861,19 +4878,19 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)1:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.194
+0.195
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.314 – 0.703
+\-0.313 – 0.704
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.455
+0.452
 
 </td>
 
@@ -4901,19 +4918,19 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)2:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-0.446
+0.452
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.632 – 2.523
+\-1.626 – 2.530
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.674
+0.670
 
 </td>
 
@@ -4983,13 +5000,13 @@ TRUE)1:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.147
+\-1.148
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-2.648 – 0.354
+\-2.649 – 0.352
 
 </td>
 
@@ -5024,19 +5041,19 @@ TRUE)1:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.597
+\-0.598
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.953 – 0.759
+\-1.954 – 0.757
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.388
+0.387
 
 </td>
 
@@ -5071,13 +5088,13 @@ testlmii\_unit\_tot\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.966 – 0.751
+\-1.966 – 0.750
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.381
+0.380
 
 </td>
 
@@ -5106,13 +5123,13 @@ c(-0.031), intercept = TRUE)1:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.445
+\-1.444
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-2.887 – -0.004
+\-2.885 – -0.004
 
 </td>
 
@@ -5147,19 +5164,19 @@ testravlt\_arcl\_raw\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-0.012
+\-0.013
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-3.658 – 3.633
+\-3.656 – 3.630
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.995
+0.994
 
 </td>
 
@@ -5188,19 +5205,19 @@ TRUE)2:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.760
+\-4.766
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-10.613 – 1.092
+\-10.614 – 1.082
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.111
+0.110
 
 </td>
 
@@ -5229,19 +5246,19 @@ TRUE)2:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-5.105
+\-5.110
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-10.373 – 0.164
+\-10.377 – 0.157
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.058
+0.057
 
 </td>
 
@@ -5270,13 +5287,13 @@ testlmii\_unit\_tot\_z:splines::ns(age\_z, knots = c(-0.031), intercept
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.383
+\-4.386
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-9.653 – 0.887
+\-9.655 – 0.883
 
 </td>
 
@@ -5311,19 +5328,19 @@ c(-0.031), intercept = TRUE)2:genderMale
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-4.122
+\-4.120
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-9.724 – 1.479
+\-9.716 – 1.476
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-0.150
+0.149
 
 </td>
 
@@ -5351,13 +5368,13 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)1:genderMale:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.025
+\-1.026
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-1.790 – -0.260
+\-1.791 – -0.262
 
 </td>
 
@@ -5391,19 +5408,19 @@ splines::ns(age\_z, knots = c(-0.031), intercept = TRUE)2:genderMale:pcr
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-3.723
+\-3.731
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
 
-\-6.867 – -0.579
+\-6.876 – -0.587
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
 
-<strong>0.021</strong>
+<strong>0.020</strong>
 
 </td>
 
@@ -5577,7 +5594,7 @@ Random Effects
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
 
-0.38 <sub>idcode.testlmi\_unit\_tot\_z</sub>
+0.39 <sub>idcode.testlmi\_unit\_tot\_z</sub>
 
 </td>
 
@@ -5613,7 +5630,7 @@ Random Effects
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
 
-0.46 <sub>idcode.testreversed\_log\_pal\_te6\_score\_z</sub>
+0.45 <sub>idcode.testreversed\_log\_pal\_te6\_score\_z</sub>
 
 </td>
 
@@ -5705,7 +5722,7 @@ Random Effects
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
 
-0.10
+0.09
 
 </td>
 
@@ -5741,7 +5758,7 @@ Random Effects
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
 
-\-0.35
+\-0.36
 
 </td>
 
@@ -5865,7 +5882,7 @@ Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
 
-0.175 / 0.673
+0.176 / 0.672
 
 </td>
 
@@ -5940,7 +5957,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -5980,7 +5997,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6020,7 +6037,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6060,7 +6077,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6100,7 +6117,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6140,7 +6157,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6180,7 +6197,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6220,7 +6237,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6260,7 +6277,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6300,7 +6317,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6340,7 +6357,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6380,7 +6397,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6420,7 +6437,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6460,7 +6477,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6500,7 +6517,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6540,7 +6557,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6580,7 +6597,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6620,7 +6637,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-55
+55.00
 
 </td>
 
@@ -6660,7 +6677,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6700,7 +6717,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6740,7 +6757,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6780,7 +6797,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6820,7 +6837,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6860,7 +6877,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6900,7 +6917,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6940,7 +6957,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -6980,7 +6997,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7020,7 +7037,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7060,7 +7077,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7100,7 +7117,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7140,7 +7157,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7180,7 +7197,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7220,7 +7237,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7260,7 +7277,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7300,7 +7317,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7340,7 +7357,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-65
+65.00
 
 </td>
 
@@ -7380,7 +7397,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7420,7 +7437,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7460,7 +7477,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7500,7 +7517,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7540,7 +7557,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7580,7 +7597,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7620,7 +7637,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7660,7 +7677,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7700,7 +7717,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7740,7 +7757,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7780,7 +7797,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7820,7 +7837,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7860,7 +7877,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7900,7 +7917,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7940,7 +7957,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -7980,7 +7997,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -8020,7 +8037,7 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
 
-75
+75.10
 
 </td>
 
@@ -8046,6 +8063,726 @@ Difference
 
 <tr>
 
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+6
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+75.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.57 \[-0.93, -0.21\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.49 \[-0.87, -0.06\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.09 \[-0.61, 0.37\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+1
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.40
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.91 \[-1.42, -0.41\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-2.07 \[-2.65, -1.4\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.16 \[0.33, 1.85\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+1
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.91 \[-1.34, -0.54\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.38 \[-1.82, -0.95\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.47 \[-0.15, 1.04\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+1
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.91 \[-1.48, -0.29\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.88 \[-1.49, -0.21\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.03 \[-0.82, 0.72\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+2
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.40
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.81 \[-1.37, -0.33\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-2 \[-2.61, -1.38\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.19 \[0.38, 1.9\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+2
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.81 \[-1.18, -0.41\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.31 \[-1.9, -0.85\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.5 \[-0.18, 1.06\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+2
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.81 \[-1.41, -0.25\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.81 \[-1.45, -0.27\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0 \[-0.93, 0.76\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+3
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.40
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.78 \[-1.27, -0.26\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-2.46 \[-2.97, -1.82\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.68 \[0.84, 2.46\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+3
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.78 \[-1.18, -0.32\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.77 \[-2.21, -1.26\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.99 \[0.36, 1.66\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+3
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.78 \[-1.37, -0.16\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.27 \[-1.85, -0.61\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.49 \[-0.48, 1.52\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+4
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.40
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.13 \[-1.6, -0.64\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-2.93 \[-3.53, -2.3\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.8 \[1.13, 2.52\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+4
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.13 \[-1.51, -0.79\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-2.24 \[-2.73, -1.75\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.11 \[0.59, 1.68\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+4
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.13 \[-1.65, -0.67\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.74 \[-2.35, -1.19\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.61 \[-0.34, 1.46\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+5
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.40
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.97 \[-1.56, -0.43\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.39 \[-2.08, -0.85\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.42 \[-0.29, 1.12\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+5
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.97 \[-1.36, -0.58\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.7 \[-1.21, -0.13\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.27 \[-0.88, 0.26\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+5
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+1.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.97 \[-1.54, -0.46\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.2 \[-0.9, 0.5\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.77 \[-1.7, 0.03\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+6
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.40
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.91 \[-1.4, -0.42\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-1.66 \[-2.25, -1.05\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.75 \[0.07, 1.38\]
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+6
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+80.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.91 \[-1.25, -0.51\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+\-0.98 \[-1.44, -0.49\]
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; ">
+
+0.06 \[-0.55, 0.65\]
+
+</td>
+
+</tr>
+
+<tr>
+
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; border-bottom: double; ">
 
 6
@@ -8060,25 +8797,1551 @@ Difference
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 
-75
+80.10
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 
-\-0.57 \[-0.93, -0.21\]
+\-0.91 \[-1.46, -0.32\]
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 
-\-0.49 \[-0.87, -0.06\]
+\-0.47 \[-1.06, 0.2\]
 
 </td>
 
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; border-bottom: double; ">
 
-\-0.09 \[-0.61, 0.37\]
+\-0.44 \[-1.32, 0.33\]
+
+</td>
+
+</tr>
+
+</table>
+
+## Table S3
+
+Estimated coefficients for a model of age x gender x APOE interactions.
+
+``` r
+sjPlot::tab_model(m.apoe)
+```
+
+<table style="border-collapse:collapse; border:none;">
+
+<tr>
+
+<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
+
+ 
+
+</th>
+
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+
+value
+
+</th>
+
+</tr>
+
+<tr>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
+
+Predictors
+
+</td>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+
+Estimates
+
+</td>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+
+CI
+
+</td>
+
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+
+p
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+(Intercept)
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.05 – 0.24
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.193
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 2
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.31
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.44 – -0.19
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 3
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.14
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.27 – -0.01
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.033</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 4
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.25
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.12 – 0.38
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase f 6
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.22
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.37 – -0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.003</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+ravlt arcl raw z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.02
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.12 – 0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.724
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+rcft rcl raw z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.80
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.90 – -0.71
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+lmi unit tot z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.39
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.48 – -0.29
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+lmii unit tot z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.46
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.56 – -0.36
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+reversed log pal te 6<br>score z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.33
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.43 – -0.24
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+Experimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.04
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.10 – 0.18
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.557
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.34
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.41 – -0.26
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+Prior Cognitive<br>Reserve(z)
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.09
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.04 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+e 4+
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.06 – 0.21
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.272
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+Male
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.27
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.41 – -0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.07
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.07 – 0.22
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.337
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.00
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.14 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.968
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.05
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.20 – 0.09
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.483
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testravlt\_arcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.01
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.16 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.925
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.98 – 1.27
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.30
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.16 – 1.45
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+1.07
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.93 – 1.22
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testrcft\_rcl\_raw\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.88
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.73 – 1.04
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.52
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.37 – 0.66
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.57
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.42 – 0.71
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.28
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.13 – 0.43
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testlmi\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.77
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.61 – 0.93
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.60
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.46 – 0.75
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.68
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.53 – 0.82
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.41
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.26 – 0.56
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testlmii\_unit\_tot\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.86
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.71 – 1.02
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.60
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.45 – 0.74
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.47
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.32 – 0.61
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.17
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.02 – 0.31
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.027</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:testreversed\_log\_pal\_te6\_score\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.55
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.40 – 0.71
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f2:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.04
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.14 – 0.06
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.421
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f3:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.01
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.11 – 0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.918
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f4:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.08 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.617
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+phase\_f6:groupExperimental
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.09
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.02 – 0.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.109
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:pcr
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.01 – 0.07
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.104
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testravlt\_arcl\_raw\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.002</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testrcft\_rcl\_raw\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.05 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testlmi\_unit\_tot\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.05 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testlmii\_unit\_tot\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.11
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.06 – 0.16
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>\<0.001
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+testreversed\_log\_pal\_te6\_score\_z:age\_z
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.08
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.03 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+<strong>0.003</strong>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:apoee4+
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.00 – 0.20
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.061
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:genderMale
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.05
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.15 – 0.05
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.321
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+apoee4+:genderMale
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.10
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.33 – 0.13
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.402
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+
+age\_z:apoee4+:genderMale
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.03
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+\-0.21 – 0.15
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+
+0.735
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="4" style="font-weight:bold; text-align:left; padding-top:.8em;">
+
+Random Effects
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+σ<sup>2</sup>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.56
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+τ<sub>00</sub> <sub>idcode</sub>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.29
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+ICC
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.34
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+N <sub>idcode</sub>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+457
+
+</td>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
+
+Observations
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+
+11276
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+
+Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
+
+</td>
+
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+
+0.161 / 0.447
 
 </td>
 
@@ -8101,7 +10364,7 @@ sessionInfo()
 
     ## R version 3.6.0 (2019-04-26)
     ## Platform: x86_64-w64-mingw32/x64 (64-bit)
-    ## Running under: Windows 10 x64 (build 17134)
+    ## Running under: Windows 10 x64 (build 18362)
     ## 
     ## Matrix products: default
     ## 

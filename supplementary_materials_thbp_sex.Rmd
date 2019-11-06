@@ -1,9 +1,8 @@
 ---
 title: "THBP T6 Gender analysis"
 author: "Bindoff, A."
-output:  
-  html_document:
-    code_folding: 'hide'
+output: github_document
+
 ---
 
 `r Sys.time()`
